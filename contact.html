@@ -40,6 +40,15 @@
         .links a{color:#94a3b8;font-size:0.9rem;text-decoration:none}
         .links a:hover{color:#4fd1c5}
         .copy{color:#64748b;font-size:0.85rem}
+        /* Success state styles */
+        .success-state{display:none;text-align:center;padding:40px 20px}
+        .success-state.active{display:block}
+        .success-icon{font-size:64px;margin-bottom:20px}
+        .success-state h2{color:#4fd1c5;font-size:1.6rem;margin-bottom:12px}
+        .success-state p{color:#cbd5e1;font-size:1.05rem;margin-bottom:8px}
+        .success-state .response-time{color:#94a3b8;font-size:0.95rem;margin-bottom:30px}
+        .cta-button{display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#f6a623,#e8940f);border:none;border-radius:8px;color:#1a2e35;font-size:1.05rem;font-weight:600;text-decoration:none;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s}
+        .cta-button:hover{transform:translateY(-2px);box-shadow:0 4px 15px rgba(246,166,35,0.3)}
     </style>
 </head>
 <body>
@@ -54,9 +63,17 @@
         </header>
         <main>
             <div class="form-box">
+                <!-- Success state (hidden by default, shown after form submit) -->
+                <div id="success-state" class="success-state">
+                    <div class="success-icon">&#10003;</div>
+                    <h2>Thank you! Your message has been sent successfully.</h2>
+                    <p class="response-time">We'll get back to you within 24 hours.</p>
+                    <a href="https://companycoach.com" class="cta-button">Learn More About Company Coach</a>
+                </div>
+                <!-- Contact form (hidden when success state is active) -->
                 <form id="contact-form" action="https://formsubmit.co/nick@companycoach.com" method="POST">
                     <!-- Formsubmit.co configuration -->
-                    <input type="hidden" name="_subject" value="New Contact Form Submission — Company Coach">
+                    <input type="hidden" name="_subject" value="New Contact Form Submission &#x2014; Company Coach">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_template" value="table">
                     <input type="text" name="_honey" style="display:none">
@@ -109,14 +126,13 @@
         </footer>
     </div>
     <script>
-        // Show success message if redirected back after submission
+        // Show success state if redirected back after submission
         (function() {
             var params = new URLSearchParams(window.location.search);
             if (params.get('success') === 'true') {
-                var msg = document.getElementById('status-message');
-                msg.textContent = 'Thank you! Your message has been sent. We\'ll get back to you shortly.';
-                msg.className = 'status-message status-success';
-                document.getElementById('contact-form').reset();
+                // Hide the form, show the success state
+                document.getElementById('contact-form').style.display = 'none';
+                document.getElementById('success-state').classList.add('active');
                 // Clean URL without reload
                 window.history.replaceState({}, document.title, window.location.pathname);
             }
