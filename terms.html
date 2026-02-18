@@ -9,9 +9,6 @@
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #1a2e35; color: #e2e8f0; line-height: 1.7; min-height: 100vh; }
         .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
         header { text-align: center; margin-bottom: 40px; padding-bottom: 30px; border-bottom: 1px solid #2d4a54; }
-        .logo { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 10px; text-decoration: none; }
-        .logo-icon { width: 44px; height: 44px; background: linear-gradient(135deg, #4fd1c5, #38b2ac); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; color: #1a2e35; }
-        .logo-text { font-size: 24px; font-weight: 600; color: #fff; }
         h1 { color: #4fd1c5; font-size: 2rem; margin-bottom: 10px; }
         .date { color: #94a3b8; font-size: 0.9rem; }
         h2 { color: #4fd1c5; font-size: 1.4rem; margin-top: 35px; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 1px solid #2d4a54; }
@@ -31,15 +28,35 @@
         .copy { color: #64748b; font-size: 0.85rem; }
         .compliance-note { background-color: #1e3a42; border: 2px solid #4fd1c5; padding: 15px 20px; margin: 25px 0; border-radius: 8px; }
         .compliance-note p { margin-bottom: 0; }
+        /* Navigation header */
+        .nav-bar{background:#15252b;border-bottom:1px solid #2d4a54;padding:12px 0;position:sticky;top:0;z-index:100}
+        .nav-inner{max-width:900px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
+        .nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+        .nav-brand-icon{width:32px;height:32px;background:linear-gradient(135deg,#4fd1c5,#38b2ac);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:bold;color:#1a2e35}
+        .nav-brand-text{font-size:18px;font-weight:600;color:#fff}
+        .nav-links{display:flex;align-items:center;gap:24px;list-style:none}
+        .nav-links a{color:#94a3b8;font-size:0.9rem;text-decoration:none;transition:color 0.2s}
+        .nav-links a:hover,.nav-links a.active{color:#4fd1c5}
+        @media(max-width:500px){.nav-inner{flex-direction:column;gap:10px}.nav-links{gap:16px}}
     </style>
 </head>
 <body>
+    <nav class="nav-bar">
+        <div class="nav-inner">
+            <a href="https://companycoach.com" class="nav-brand">
+                <div class="nav-brand-icon">C</div>
+                <span class="nav-brand-text">Company Coach</span>
+            </a>
+            <div class="nav-links">
+                <a href="https://companycoach.com">Home</a>
+                <a href="https://app.companycoach.com/contact.html">Contact</a>
+                <a href="https://app.companycoach.com/privacy.html">Privacy</a>
+                <a href="https://app.companycoach.com/terms.html" class="active">Terms</a>
+            </div>
+        </div>
+    </nav>
     <div class="container">
         <header>
-            <a href="https://companycoach.com" class="logo">
-                <div class="logo-icon">C</div>
-                <span class="logo-text">Company Coach</span>
-            </a>
             <h1>Terms of Service</h1>
             <p class="date">Effective Date: February 4, 2026</p>
         </header>
@@ -62,9 +79,9 @@
 
                 <p><strong>1. Program Description:</strong> This messaging program sends appointment confirmation and reminder messages to customers who have booked an appointment with Company Coach through our website at companycoach.com, or via our scheduling forms, and have explicitly opted in to receive SMS notifications. Opt-in is collected via web forms with a dedicated checkbox for SMS consent. Messages include scheduling confirmations, appointment reminders, rescheduling updates, and customer support communications.</p>
 
-                <p><strong>2. Cancellation Instructions:</strong> You can cancel the SMS service at any time. Simply text “STOP” to the same number that sent you messages. Upon sending “STOP,” we will confirm your unsubscribe status via SMS. Following this confirmation, you will no longer receive SMS messages from us. To rejoin, sign up as you did initially, and we will resume sending SMS messages to you.</p>
+                <p><strong>2. Cancellation Instructions:</strong> You can cancel the SMS service at any time. Simply text "STOP" to the same number that sent you messages. Upon sending "STOP," we will confirm your unsubscribe status via SMS. Following this confirmation, you will no longer receive SMS messages from us. To rejoin, sign up as you did initially, and we will resume sending SMS messages to you.</p>
 
-                <p><strong>3. Support Information:</strong> If you experience issues with the messaging program, reply with the keyword “HELP” for more assistance, or reach out directly to <a href="mailto:admin@companycoach.com">admin@companycoach.com</a> or call (360) 565-5885 during business hours.</p>
+                <p><strong>3. Support Information:</strong> If you experience issues with the messaging program, reply with the keyword "HELP" for more assistance, or reach out directly to <a href="mailto:admin@companycoach.com">admin@companycoach.com</a> or call (360) 565-5885 during business hours.</p>
 
                 <p><strong>4. Carrier Liability:</strong> Carriers are not liable for delayed or undelivered messages.</p>
 
@@ -85,7 +102,7 @@
             <p>All content, materials, and intellectual property provided through our services remain the property of Company Coach unless otherwise specified. You may not reproduce, distribute, or create derivative works without our express written permission.</p>
 
             <h2>Limitation of Liability</h2>
-            <p>Company Coach provides services “as is” and makes no warranties, express or implied. We are not liable for any indirect, incidental, or consequential damages arising from your use of our services.</p>
+            <p>Company Coach provides services "as is" and makes no warranties, express or implied. We are not liable for any indirect, incidental, or consequential damages arising from your use of our services.</p>
 
             <h2>Governing Law</h2>
             <p>These Terms of Service are governed by the laws of the State of Washington, without regard to conflict of law principles.</p>
@@ -97,7 +114,7 @@
             <p>Website: <a href="https://companycoach.com">companycoach.com</a></p>
 
             <h2>Changes to These Terms</h2>
-            <p>We may update these Terms of Service from time to time. We will notify you of any material changes by posting the updated terms on this page and updating the “Effective Date” at the top.</p>
+            <p>We may update these Terms of Service from time to time. We will notify you of any material changes by posting the updated terms on this page and updating the "Effective Date" at the top.</p>
         </main>
         <footer>
             <div class="links">
