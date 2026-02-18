@@ -9,9 +9,6 @@
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #1a2e35; color: #e2e8f0; line-height: 1.7; min-height: 100vh; }
         .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
         header { text-align: center; margin-bottom: 40px; padding-bottom: 30px; border-bottom: 1px solid #2d4a54; }
-        .logo { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 10px; text-decoration: none; }
-        .logo-icon { width: 44px; height: 44px; background: linear-gradient(135deg, #4fd1c5, #38b2ac); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; color: #1a2e35; }
-        .logo-text { font-size: 24px; font-weight: 600; color: #fff; }
         h1 { color: #4fd1c5; font-size: 2rem; margin-bottom: 10px; }
         .last-updated { color: #94a3b8; font-size: 0.9rem; }
         h2 { color: #4fd1c5; font-size: 1.4rem; margin-top: 35px; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 1px solid #2d4a54; }
@@ -32,21 +29,41 @@
         .copyright { color: #64748b; font-size: 0.85rem; }
         .notice-box { background-color: #1e3a42; border: 2px solid #4fd1c5; padding: 20px; margin: 25px 0; border-radius: 8px; }
         .notice-box p { margin-bottom: 0; font-weight: 500; }
+        /* Navigation header */
+        .nav-bar{background:#15252b;border-bottom:1px solid #2d4a54;padding:12px 0;position:sticky;top:0;z-index:100}
+        .nav-inner{max-width:900px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
+        .nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+        .nav-brand-icon{width:32px;height:32px;background:linear-gradient(135deg,#4fd1c5,#38b2ac);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:bold;color:#1a2e35}
+        .nav-brand-text{font-size:18px;font-weight:600;color:#fff}
+        .nav-links{display:flex;align-items:center;gap:24px;list-style:none}
+        .nav-links a{color:#94a3b8;font-size:0.9rem;text-decoration:none;transition:color 0.2s}
+        .nav-links a:hover,.nav-links a.active{color:#4fd1c5}
+        @media(max-width:500px){.nav-inner{flex-direction:column;gap:10px}.nav-links{gap:16px}}
     </style>
 </head>
 <body>
+    <nav class="nav-bar">
+        <div class="nav-inner">
+            <a href="https://companycoach.com" class="nav-brand">
+                <div class="nav-brand-icon">C</div>
+                <span class="nav-brand-text">Company Coach</span>
+            </a>
+            <div class="nav-links">
+                <a href="https://companycoach.com">Home</a>
+                <a href="https://app.companycoach.com/contact.html">Contact</a>
+                <a href="https://app.companycoach.com/privacy.html" class="active">Privacy</a>
+                <a href="https://app.companycoach.com/terms.html">Terms</a>
+            </div>
+        </div>
+    </nav>
     <div class="container">
         <header>
-            <a href="https://companycoach.com" class="logo">
-                <div class="logo-icon">C</div>
-                <span class="logo-text">Company Coach</span>
-            </a>
             <h1>Privacy Policy</h1>
             <p class="last-updated">Effective Date: February 4, 2026</p>
         </header>
         <main>
             <div class="notice-box">
-                <p><strong>IMPORTANT NOTICE REGARDING TEXT MESSAGING DATA:</strong> Company Coach (“we,” “us,” or “our”) DOES NOT share customer opt-in information, including phone numbers and consent records, with any affiliates or third parties for marketing, promotional, or any other purposes unrelated to providing our direct services. All text messaging originator opt-in data is kept strictly confidential.</p>
+                <p><strong>IMPORTANT NOTICE REGARDING TEXT MESSAGING DATA:</strong> Company Coach ("we," "us," or "our") DOES NOT share customer opt-in information, including phone numbers and consent records, with any affiliates or third parties for marketing, promotional, or any other purposes unrelated to providing our direct services. All text messaging originator opt-in data is kept strictly confidential.</p>
             </div>
 
             <h2>1. Information We Collect</h2>
@@ -91,7 +108,7 @@
 
             <h3>Opt-Out Instructions:</h3>
             <ul>
-                <li>You can cancel SMS notifications at any time by replying “STOP”</li>
+                <li>You can cancel SMS notifications at any time by replying "STOP"</li>
                 <li>You will receive a final confirmation message, and no further messages will be sent unless you re-opt in</li>
                 <li>All opt-out requests are processed immediately</li>
             </ul>
@@ -105,7 +122,7 @@
 
             <h3>Help &amp; Support:</h3>
             <ul>
-                <li>Reply “HELP” for assistance or contact us at <a href="mailto:admin@companycoach.com">admin@companycoach.com</a></li>
+                <li>Reply "HELP" for assistance or contact us at <a href="mailto:admin@companycoach.com">admin@companycoach.com</a></li>
                 <li>Customer support is available during regular business hours</li>
             </ul>
 
@@ -128,7 +145,7 @@
             <h3>Service Providers:</h3>
             <ul>
                 <li>Third-party vendors who assist in our operations (e.g., payment processing, appointment scheduling)</li>
-                <li>SMS aggregators and providers solely for the purpose of delivering messages you’ve consented to receive</li>
+                <li>SMS aggregators and providers solely for the purpose of delivering messages you have consented to receive</li>
                 <li>All service providers are contractually obligated to maintain confidentiality and security</li>
             </ul>
 
@@ -183,7 +200,7 @@
             <p>Website: <a href="https://companycoach.com">companycoach.com</a></p>
 
             <h2>9. Changes to This Policy</h2>
-            <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the “Effective Date” at the top.</p>
+            <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Effective Date" at the top.</p>
         </main>
         <footer>
             <div class="footer-links">
